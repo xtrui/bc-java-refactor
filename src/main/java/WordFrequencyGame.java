@@ -9,6 +9,7 @@ public class WordFrequencyGame {
     private static final String BLANK_SPACE_PATTERN = "\\s+";
     private static final String NEW_LINE_DELIMITER = "\n";
     private static final String CALCULATE_ERROR = "Calculate Error";
+    private static final String BLANK_SPACE = " ";
 
     public String getResult(String inputStr) {
 
@@ -39,7 +40,7 @@ public class WordFrequencyGame {
 
                 StringJoiner joiner = new StringJoiner(NEW_LINE_DELIMITER);
                 for (WordInfo w : wordInfoList) {
-                    String s = w.getValue() + " " + w.getWordCount();
+                    String s = w.getValue() + BLANK_SPACE + w.getWordCount();
                     joiner.add(s);
                 }
                 return joiner.toString();
