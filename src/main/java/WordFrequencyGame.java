@@ -11,15 +11,15 @@ public class WordFrequencyGame {
     private static final String CALCULATE_ERROR = "Calculate Error";
     private static final String BLANK_SPACE = " ";
 
-    public String getResult(String inputStr) {
+    public String getResult(String sentence) {
 
-        if (inputStr.split(BLANK_SPACE_PATTERN).length == 1) {
-            return inputStr + " 1";
+        if (sentence.split(BLANK_SPACE_PATTERN).length == 1) {
+            return sentence + " 1";
         } else {
 
             try {
 
-                String[] arr = inputStr.split(BLANK_SPACE_PATTERN);
+                String[] arr = sentence.split(BLANK_SPACE_PATTERN);
 
                 List<WordInfo> wordInfoList = new ArrayList<>();
                 for (String s : arr) {
