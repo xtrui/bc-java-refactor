@@ -19,10 +19,10 @@ public class WordFrequencyGame {
 
             try {
 
-                String[] arr = sentence.split(BLANK_SPACE_PATTERN);
+                String[] words = sentence.split(BLANK_SPACE_PATTERN);
 
                 List<WordInfo> wordInfoList = new ArrayList<>();
-                for (String s : arr) {
+                for (String s : words) {
                     WordInfo wordInfo = new WordInfo(s, 1);
                     wordInfoList.add(wordInfo);
                 }
