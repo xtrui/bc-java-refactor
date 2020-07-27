@@ -12,25 +12,18 @@ public class WordFrequencyGame {
     private static final String BLANK_SPACE = " ";
 
     public String getResult(String sentence) {
+        try {
+            String[] words = sentence.split(BLANK_SPACE_PATTERN);
 
-        if (sentence.split(BLANK_SPACE_PATTERN).length == 1) {
-            return sentence + " 1";
-        } else {
+            List<WordInfo> wordInfos = getWordInfos(words);
 
-            try {
+            Map<String, List<WordInfo>> wordMap = getListMap(wordInfos);
 
-                String[] words = sentence.split(BLANK_SPACE_PATTERN);
+            wordInfos = getOrderedWordInfos(wordMap);
 
-                List<WordInfo> wordInfos = getWordInfos(words);
-
-                Map<String, List<WordInfo>> wordMap = getListMap(wordInfos);
-
-                wordInfos = getOrderedWordInfos(wordMap);
-
-                return createFinalWordInfoSentence(wordInfos);
-            } catch (Exception e) {
-                return CALCULATE_ERROR;
-            }
+            return createFinalWordInfoSentence(wordInfos);
+        } catch (Exception e) {
+            return CALCULATE_ERROR;
         }
     }
 
@@ -78,7 +71,6 @@ public class WordFrequencyGame {
         }
         return wordMap;
     }
-
 
 
 }
