@@ -22,8 +22,8 @@ public class WordFrequencyGame {
                 String[] words = sentence.split(BLANK_SPACE_PATTERN);
 
                 List<WordInfo> wordInfos = new ArrayList<>();
-                for (String s : words) {
-                    WordInfo wordInfo = new WordInfo(s, 1);
+                for (String word : words) {
+                    WordInfo wordInfo = new WordInfo(word, 1);
                     wordInfos.add(wordInfo);
                 }
 
