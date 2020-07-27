@@ -21,11 +21,7 @@ public class WordFrequencyGame {
 
                 String[] words = sentence.split(BLANK_SPACE_PATTERN);
 
-                List<WordInfo> wordInfos = new ArrayList<>();
-                for (String word : words) {
-                    WordInfo wordInfo = new WordInfo(word, 1);
-                    wordInfos.add(wordInfo);
-                }
+                List<WordInfo> wordInfos = getWordInfos(words);
 
                 Map<String, List<WordInfo>> wordMap = getListMap(wordInfos);
 
@@ -50,6 +46,15 @@ public class WordFrequencyGame {
         }
     }
 
+    private List<WordInfo> getWordInfos(String[] words) {
+        List<WordInfo> wordInfos = new ArrayList<>();
+        for (String word : words) {
+            WordInfo wordInfo = new WordInfo(word, 1);
+            wordInfos.add(wordInfo);
+        }
+        return wordInfos;
+    }
+
     private Map<String, List<WordInfo>> getListMap(List<WordInfo> wordInfoList) {
         Map<String, List<WordInfo>> wordMap = new HashMap<>();
         for (WordInfo wordInfo : wordInfoList) {
@@ -63,4 +68,7 @@ public class WordFrequencyGame {
         }
         return wordMap;
     }
+
+
+
 }
