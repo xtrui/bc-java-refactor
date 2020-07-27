@@ -36,7 +36,7 @@ public class WordFrequencyGame {
                 }
                 wordInfos = tempWordInfos;
 
-                wordInfos.sort((fistWordInfo, w2) -> w2.getWordCount() - fistWordInfo.getWordCount());
+                wordInfos.sort((fistWordInfo, secondWordInfo) -> secondWordInfo.getWordCount() - fistWordInfo.getWordCount());
 
                 StringJoiner joiner = new StringJoiner(NEW_LINE_DELIMITER);
                 for (WordInfo w : wordInfos) {
