@@ -8,7 +8,7 @@ public class WordFrequencyGame {
     public String getResult(String inputStr) {
 
 
-        if (inputStr.split("\\s+").length==1) {
+        if (inputStr.split("\\s+").length == 1) {
             return inputStr + " 1";
         } else {
 
@@ -24,7 +24,7 @@ public class WordFrequencyGame {
                 }
 
                 //get the map for the next step of sizing the same word
-                Map<String, List<WordInfo>> map =getListMap(wordInfoList);
+                Map<String, List<WordInfo>> map = getListMap(wordInfoList);
 
                 List<WordInfo> list = new ArrayList<>();
                 for (Map.Entry<String, List<WordInfo>> entry : map.entrySet()) {
@@ -37,7 +37,7 @@ public class WordFrequencyGame {
 
                 StringJoiner joiner = new StringJoiner("\n");
                 for (WordInfo w : wordInfoList) {
-                    String s = w.getValue() + " " +w.getWordCount();
+                    String s = w.getValue() + " " + w.getWordCount();
                     joiner.add(s);
                 }
                 return joiner.toString();
@@ -49,14 +49,13 @@ public class WordFrequencyGame {
 
     private Map<String, List<WordInfo>> getListMap(List<WordInfo> wordInfoList) {
         Map<String, List<WordInfo>> map = new HashMap<>();
-        for (WordInfo wordInfo : wordInfoList){
+        for (WordInfo wordInfo : wordInfoList) {
 //       map.computeIfAbsent(input.getValue(), k -> new ArrayList<>()).add(input);
             if (!map.containsKey(wordInfo.getValue())) {
                 ArrayList arr = new ArrayList<>();
                 arr.add(wordInfo);
                 map.put(wordInfo.getValue(), arr);
-            }
-            else {
+            } else {
                 map.get(wordInfo.getValue()).add(wordInfo);
             }
         }
