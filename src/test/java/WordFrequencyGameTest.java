@@ -1,6 +1,6 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WordFrequencyGameTest {
 
@@ -37,7 +37,7 @@ public class WordFrequencyGameTest {
     }
 
     @Test
-    public void should_pracess_two_same_words_with_sorted() throws Exception {
+    public void should_process_two_same_words_with_sorted() throws Exception {
         //Given
         String inputStr = "the the is";
         String expectResult = "the 2\nis 1";
